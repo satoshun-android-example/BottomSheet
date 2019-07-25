@@ -26,5 +26,15 @@ class MainActivity : AppCompatActivity() {
         println("onStateChanged $newState")
       }
     })
+
+    binding.title1.setOnClickListener {
+      if (behavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+        behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        return@setOnClickListener
+      }
+      if (behavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
+        behavior.state = BottomSheetBehavior.STATE_EXPANDED
+      }
+    }
   }
 }
