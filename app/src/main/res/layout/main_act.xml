@@ -39,6 +39,7 @@
         android:animateLayoutChanges="true"
         android:background="@android:color/holo_green_dark"
         android:orientation="vertical"
+        app:behavior_fitToContents="false"
         app:behavior_peekHeight="120dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
