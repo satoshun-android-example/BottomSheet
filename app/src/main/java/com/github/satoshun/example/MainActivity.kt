@@ -9,8 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.lifecycleScope
 import com.github.satoshun.example.databinding.MainActBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
   private lateinit var binding: MainActBinding
@@ -44,15 +47,21 @@ class MainActivity : AppCompatActivity() {
     binding.title2.setOnClickListener {
       binding.goneable.isVisible = !binding.goneable.isVisible
       if (binding.goneable.isVisible) {
-        behavior.peekHeight = dpToPx(120 + 100)
+        lifecycleScope.launch {
+          delay(16)
+          behavior.setPeekHeight(dpToPx(120 + 100), true)
+        }
       } else {
-        behavior.peekHeight = dpToPx(120)
+        lifecycleScope.launch {
+          delay(16)
+          behavior.setPeekHeight(dpToPx(120), true)
+        }
       }
     }
 
-    val transition = LayoutTransition()
-    transition.setAnimateParentHierarchy(false)
-    binding.bottom.layoutTransition = transition
+//    val transition = LayoutTransition()
+//    transition.setAnimateParentHierarchy(false)
+//    binding.bottom.layoutTransition = transition
   }
 }
 
