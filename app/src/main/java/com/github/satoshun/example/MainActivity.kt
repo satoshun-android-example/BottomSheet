@@ -27,8 +27,10 @@ class MainActivity : AppCompatActivity() {
       override fun onSlide(bottomSheet: View, slideOffset: Float) {
         println("onSlide $slideOffset")
 
+        val s = if (slideOffset < 0) -slideOffset else slideOffset
+
         binding.bottomButton.translationY = -(
-          (bottomSheet.height - behavior.peekHeight) * (1.0 - slideOffset))
+          (bottomSheet.height - behavior.peekHeight) * (1.0 - s))
           .toFloat()
       }
 
