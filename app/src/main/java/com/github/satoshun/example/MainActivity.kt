@@ -1,6 +1,5 @@
 package com.github.satoshun.example
 
-import android.animation.LayoutTransition
 import android.content.Context
 import android.os.Bundle
 import android.view.View
@@ -27,6 +26,12 @@ class MainActivity : AppCompatActivity() {
     behavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
       override fun onSlide(bottomSheet: View, slideOffset: Float) {
         println("onSlide $slideOffset")
+
+        println((bottomSheet.height * (1.0 - slideOffset)).toFloat())
+
+        binding.bottomButton.translationY = -(
+          (bottomSheet.height - behavior.peekHeight) * (1.0 - slideOffset))
+          .toFloat()
       }
 
       override fun onStateChanged(bottomSheet: View, newState: Int) {
