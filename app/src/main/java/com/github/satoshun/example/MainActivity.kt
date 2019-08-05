@@ -32,10 +32,14 @@ class MainActivity : AppCompatActivity() {
         binding.bottomButton.translationY = -(
           (bottomSheet.height - behavior.peekHeight) * (1.0 - s))
           .toFloat()
+
+        binding.backBackground.alpha = slideOffset
       }
 
       override fun onStateChanged(bottomSheet: View, newState: Int) {
         println("onStateChanged $newState")
+        binding.backBackground.isVisible =
+          newState != BottomSheetBehavior.STATE_COLLAPSED
       }
     })
 
@@ -46,6 +50,7 @@ class MainActivity : AppCompatActivity() {
       }
       if (behavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
         behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        return@setOnClickListener
       }
     }
 

@@ -28,6 +28,14 @@
       app:layout_constraintTop_toBottomOf="@id/title1"
       tools:ignore="HardcodedText" />
 
+    <View
+      android:id="@+id/back_background"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="#cc000000"
+      android:visibility="gone" />
+    <!--    android:background="#99000000"-->
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent">
@@ -40,6 +48,7 @@
         android:elevation="8dp"
         android:orientation="vertical"
         app:behavior_fitToContents="false"
+        app:behavior_halfExpandedRatio="0.7"
         app:behavior_peekHeight="120dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
         <!--        android:animateLayoutChanges="true"-->
