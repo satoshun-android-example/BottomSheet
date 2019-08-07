@@ -69,6 +69,10 @@ class MainActivity : AppCompatActivity() {
       }
     }
 
+    binding.backBackground.setOnClickListener {
+      behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+    }
+
 //    val transition = LayoutTransition()
 //    transition.setAnimateParentHierarchy(false)
 //    binding.bottom.layoutTransition = transition
