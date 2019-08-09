@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
 
       override fun onStateChanged(bottomSheet: View, newState: Int) {
         println("onStateChanged $newState")
+        if (newState == BottomSheetBehavior.STATE_SETTLING) {
+          return
+        }
+
         binding.backBackground.isVisible =
           newState != BottomSheetBehavior.STATE_COLLAPSED
       }
