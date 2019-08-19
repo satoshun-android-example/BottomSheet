@@ -83,7 +83,6 @@ class MainActivity : AppCompatActivity() {
   }
 }
 
-
 @Px
 private fun Context.dpToPx(
   value: Int
