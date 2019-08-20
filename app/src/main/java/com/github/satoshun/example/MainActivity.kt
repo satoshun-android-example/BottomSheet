@@ -6,6 +6,7 @@ import android.view.View
 import androidx.annotation.Px
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.ViewCompat
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
@@ -79,6 +80,12 @@ class MainActivity : AppCompatActivity() {
 
     binding.backBackground.setOnClickListener {
       behavior.state = BottomSheetBehavior.STATE_COLLAPSED
+    }
+
+    binding.bottomContainer.setOnApplyWindowInsetsListener { v, insets ->
+      println(insets.systemWindowInsetBottom.toFloat())
+      v.translationY = -insets.systemWindowInsetBottom.toFloat()
+      insets
     }
 
 //    val transition = LayoutTransition()

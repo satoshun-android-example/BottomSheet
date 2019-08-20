@@ -5,8 +5,7 @@
 
   <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <EditText
       android:id="@+id/edit"
@@ -47,8 +46,10 @@
     <!--    android:background="#99000000"-->
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+      android:id="@+id/bottom_container"
       android:layout_width="match_parent"
-      android:layout_height="match_parent">
+      android:layout_height="match_parent"
+      android:fitsSystemWindows="true">
 
       <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottom"
@@ -56,6 +57,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/round_background"
         android:elevation="8dp"
+        android:fitsSystemWindows="true"
         app:behavior_fitToContents="false"
         app:behavior_halfExpandedRatio="0.7"
         app:behavior_peekHeight="120dp"
