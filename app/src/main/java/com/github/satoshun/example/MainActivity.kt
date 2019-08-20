@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
   private lateinit var binding: MainActBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
+    window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or
+      View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+      View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this, R.layout.main_act)
 
