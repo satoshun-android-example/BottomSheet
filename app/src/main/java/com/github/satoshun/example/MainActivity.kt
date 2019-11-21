@@ -87,10 +87,6 @@ class MainActivity : AppCompatActivity() {
       v.translationY = -insets.systemWindowInsetBottom.toFloat()
       insets
     }
-
-//    val transition = LayoutTransition()
-//    transition.setAnimateParentHierarchy(false)
-//    binding.bottom.layoutTransition = transition
   }
 }
 
